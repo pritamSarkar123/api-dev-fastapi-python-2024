@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     title: str
     version: str
     host: Optional[str] = Field(default="0.0.0.0")
-    port: Optonal[int] = Field(default=5000)
+    port: Optional[int] = Field(default=5000)
 
     class Config:
         env_file = ".env"
