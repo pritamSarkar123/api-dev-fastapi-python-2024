@@ -1,4 +1,4 @@
-from pydantic import BaseSettings
+from pydantic import BaseSettings, Field, Optional
 
 
 class Settings(BaseSettings):
@@ -16,7 +16,8 @@ class Settings(BaseSettings):
     refresh_token_expire_minutes: int
     title: str
     version: str
-    host: str
+    host: Optional[str] = Field(default="0.0.0.0")
+    port: Optonal[int] = Field(default=5000)
 
     class Config:
         env_file = ".env"
